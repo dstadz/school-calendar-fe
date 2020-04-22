@@ -37,7 +37,7 @@ const Calendar = ({ events, selected, setSelected, templateFormOpen, month,  mon
   },[monthList])
 
     return (
-      <Box id={i} className="calendar" backgroundColor="white" borderRadius="10px" style={{border: '1px solid red', margin: '4%'}}>
+      <Box id={i} className="calendar" backgroundColor="white" borderRadius="10px" style={{margin: '4%'}}>
         <Flex className="header" align="center" justify="center" py={4}>
           <MonthNameContainer>
             {/* <Heading className="heading">{date.format('MMMM')} {date.format('YYYY')}</Heading> */}

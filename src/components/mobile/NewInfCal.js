@@ -31,7 +31,7 @@ export default function NewInfCal({ items, api, selected, setSelected, templateF
   
   
     return (
-      <Fragment>
+
         <InfiniteLoader
           isItemLoaded={isItemLoaded}
           itemCount={50}
@@ -40,7 +40,7 @@ export default function NewInfCal({ items, api, selected, setSelected, templateF
           {({ onItemsRendered, ref }) => (
             <List
               className="List"
-              height={window.innerHeight-20}
+              height={window.innerHeight-115}
               itemCount={50}
               itemSize={817}
               onItemsRendered={onItemsRendered}
@@ -76,6 +76,6 @@ export default function NewInfCal({ items, api, selected, setSelected, templateF
             </List>
           )}
         </InfiniteLoader>
-      </Fragment>
+
     );
   }

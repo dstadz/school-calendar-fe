@@ -53,14 +53,14 @@ const Dashboard = ({ setUserState, setFormOpen, formOpen, templateFormOpen, setT
     })();
   }, [currentUser, formOpen]);
 
-  //highlights calendar based on whether choose dates button is active or not
-  useEffect(() => {
-    if (templateFormOpen) {
-      setShadow("0px 0px 19px 7px rgba(99,179,237,1)")
-    } else {
-      setShadow("");
-    }
-  }, [templateFormOpen])
+  // //highlights calendar based on whether choose dates button is active or not
+  // useEffect(() => {
+  //   if (templateFormOpen) {
+  //     setShadow("0px 0px 19px 7px rgba(99,179,237,1)")
+  //   } else {
+  //     setShadow("");
+  //   }
+  // }, [templateFormOpen])
   
 
   //dynamically sets the state of months based on the state numOfMonths

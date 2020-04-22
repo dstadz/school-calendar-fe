@@ -28,19 +28,19 @@ const Mobile = () => {
 
         <div >
             <Dashboard formOpen={formOpen} setFormOpen={setFormOpen} setTemplateFormOpen={setTemplateFormOpen} templateFormOpen={templateFormOpen} conStart={conStart} conEnd={conEnd} summ={summ} selected={selected} setSelected={setSelected} toggleNav={toggleNav} setToggleNav={setToggleNav}/>
-            <NavBar>
-            {toggleNav && <BotNav NavState={NavState} setNavState={setNavState}></BotNav>}
-            </NavBar>
+     
+            {toggleNav && <Nav NavState={NavState} setNavState={setNavState} />}
+         
         </div>
     )
     } else if(NavState === 1){
         return(
-        <div>hello im events
+        <div>
 
             <MobileEvents setNavState={setNavState} formOpen={formOpen} setFormOpen={setFormOpen}setTemplateFormOpen={setTemplateFormOpen} templateFormOpen={templateFormOpen} setToggleNav={setToggleNav} toggleNav={toggleNav} conStart={conStart} setConStart={setConStart} conEnd={conEnd} setConEnd={setConEnd} summ={summ} setSumm={setSumm} selected={selected} setSelected={setSelected}></MobileEvents>
-            <NavBar>
-            <BotNav NavState={NavState} setNavState={setNavState}></BotNav>
-            </NavBar>
+
+            <Nav NavState={NavState} setNavState={setNavState} />
+
         </div>
         )
     } else if(NavState === 2){

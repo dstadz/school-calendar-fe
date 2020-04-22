@@ -15,7 +15,7 @@ const Nav = props => {
 
     if (props.NavState === 0) {
         return (
-            <div style={{ height: '100vh' }}>
+            <div>
                 {/* <div style={{ width: '100%', display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #000000', paddingTop: '5%', paddingBottom: '2.5%', paddingLeft: '2.5%', paddingRight: '2.5%', position: 'fixed', top: '0', background: 'white' }}>
                     <i class="fas fa-bars" style={{ height: '34px', width: '80px', fontSize: '1.6rem' }}></i>
                     <button style={{ height: '34px', width: '97px', color: 'white', background: '#28807D', fontFamily: 'Open Sans', fontWeight: 'bold', borderRadius: '10px', padding: 'auto auto' }}>Add event</button>
