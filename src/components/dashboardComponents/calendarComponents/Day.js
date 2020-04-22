@@ -36,9 +36,10 @@ const Day = ({ events, date, isPicked, handleSelected, isToday, day, i }) => {
   return (
           <Cell
             className="calendar-days-item"
-            borderBottomWidth="10px"
+            // borderBottomWidth="10px"
             borderBottomColor="gray.200"
             height="120px"
+            width={window.innerWidth/8}
             key={i}
           >
             <Flex

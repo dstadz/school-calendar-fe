@@ -45,7 +45,8 @@ const Mobile = () => {
         )
     } else if(NavState === 2){
         return(
-            <div>hello im groups
+            <div>
+                <h1 style={{margin: "10% auto", fontSize: "2rem"}}>My Groups</h1>
             <Nav NavState={NavState} setNavState={setNavState} />
         </div>
         )

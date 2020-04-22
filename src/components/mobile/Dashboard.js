@@ -3,7 +3,6 @@ import { Box, Grid } from '@chakra-ui/core';
 import axios from 'axios';
 import { useAuth } from '../../contexts/auth';
 import dayjs from 'dayjs';
-import InfiniteCalendar from './InfiniteCalendar'
 import ConfirmDatesBtn from './ConfirmDatesBtn'
 import NewInfCal from './NewInfCal'
 
@@ -53,21 +52,13 @@ const Dashboard = ({ setUserState, setFormOpen, formOpen, templateFormOpen, setT
     })();
   }, [currentUser, formOpen]);
 
-  // //highlights calendar based on whether choose dates button is active or not
-  // useEffect(() => {
-  //   if (templateFormOpen) {
-  //     setShadow("0px 0px 19px 7px rgba(99,179,237,1)")
-  //   } else {
-  //     setShadow("");
-  //   }
-  // }, [templateFormOpen])
   
 
   //dynamically sets the state of months based on the state numOfMonths
-  useEffect(()=>{
-    setMonths(nextMonth(numOfMonths));
-    // console.log('months', nextMonth(numOfMonths))
-  },[templateFormOpen])
+  // useEffect(()=>{
+  //   setMonths(nextMonth(numOfMonths));
+  //   // console.log('months', nextMonth(numOfMonths))
+  // },[templateFormOpen])
   
   //helper function to loop create months in the future based on numOfMonths
   const nextMonth = (numOfMonths) => {
@@ -95,11 +86,6 @@ const Dashboard = ({ setUserState, setFormOpen, formOpen, templateFormOpen, setT
 
  //infinite loading stuff
 const [items, setItems] = useState(nextMonth(50));
-// const [moreItemsLoading, setMoreItemsLoading] = useState(false);
-// const [hasNextPage, setHasNextPage] = useState(true);
-// const [isNextPageLoading, setIsNextPageLoading] = useState(false);
-
-
 
 const LOADING = 1;
 const LOADED = 2;
@@ -119,20 +105,7 @@ const loadMore = (startIndex, stopIndex) => {
   );
 };
 
-// const loadMore = () => {
-//   console.log('loading more');
-//   setIsNextPageLoading(true);
-//   setTimeout(()=>{setNumOfMonths(numOfMonths + 1); 
-//     setItems([...nextMonth(numOfMonths +1)])
-//     console.log('num of months from loadmore', numOfMonths)
-//     setIsNextPageLoading(false);}, 5000)
-//   // setMoreItemsLoading(false);
 
-// }
-
- //end infinite loading stuff
-
-  // const [items, setItems] = useState(["fire", "water", "earth", "heart"])
   return (
     <Box
       pos="relative"
@@ -150,27 +123,6 @@ const loadMore = (startIndex, stopIndex) => {
         <Box className="calendarArea" gridArea="main" style={{ boxShadow: shadow }}>
         <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
 
-        {/* {months.length > 0 && 
-        <InfiniteCalendar
-        items={items}
-        moreItemsLoading={moreItemsLoading}
-        loadMore={loadMore}
-        hasNextPage={hasNextPage}
-        api={api}
-        selected={selected}
-        setSelected={setSelected}
-        templateFormOpen={templateFormOpen}
-        setTemplateFormOpen={setTemplateFormOpen}
-        events={events}
-        month={items}
-        monthList={items}
-        isItemLoaded={isItemLoaded}
-        numOfMonths={numOfMonths}
-        indexes={indexes}
-        setIndexes={setIndexes}
-        />
-        
-        } */}
         {items.length > 0 && <NewInfCal items={items}
         api={api}
         selected={selected}

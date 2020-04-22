@@ -45,7 +45,7 @@ export default function NewInfCal({ items, api, selected, setSelected, templateF
               itemSize={817}
               onItemsRendered={onItemsRendered}
               ref={ref}
-              width={window.innerWidth-10}
+              width={window.innerWidth}
             >
               {({ index, style }) => {
                 let label;
