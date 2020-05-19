@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import useDate from '../../../hooks/useDate';
 import Day from './Day'
-import DisabledDays from './DIsabledDays'
+import DisabledDays from './DisabledDays'
 
 
 
@@ -51,7 +51,7 @@ const Days = ({ events, date }) => {
             : alert('pick a template');
           };
 
-          
+
 
         return (
           <Day i={i} isPicked={isPicked} handleSelected={handleSelected} isToday={isToday} day={day} date={date} events={events}/>

@@ -19,7 +19,6 @@ const Template = ({
   handleDelete
 }) => {
   const [templateFormOpen, setTemplateForm] = useRecoilState(templateForm);
-  console.log(templateFormOpen)
 
   const openTemplate = () => {
     console.log('clicked open template', templateFormOpen)
