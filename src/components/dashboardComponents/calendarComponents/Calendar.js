@@ -6,7 +6,7 @@ import Cell from './Cell';
 import useDate from '../../../hooks/useDate';
 import styled from 'styled-components';
 
-const Calendar = ({ events, selected, setSelected, templateFormOpen }) => {
+const Calendar = ({ events, selected, setSelected}) => {
   const currentDay = dayjs();
 
   // state to display cuurent date
@@ -80,7 +80,6 @@ const Calendar = ({ events, selected, setSelected, templateFormOpen }) => {
         <Days
           events={events}
           date={date}
-          templateFormOpen={templateFormOpen}
           selected={selected}
           setSelected={setSelected}
           weekDayOfFirstDay={weekDayOfFirstDoM}

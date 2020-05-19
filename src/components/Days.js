@@ -5,7 +5,7 @@ import EventsIndicator from './EventsIndicator';
 import useDate from '../hooks/useDate';
 
 import { useRecoilValue, useRecoilState } from "recoil";
-import { templateFormOpen, selectedarr } from '../utils/store'
+import { templateForm, selectedarr } from '../utils/store'
 
 
 export const DisabledDays = ({ days }) => {
@@ -35,9 +35,9 @@ const Days = ({ events, date }) => {
     weekDayOfLastDoM
   } = useDate(date);
 
-  const templateForm = useRecoilValue(templateFormOpen)
+  const templateFormOpen = useRecoilValue(templateForm)
   const [selected, setSelected] = useRecoilState(selectedarr)
-  console.log(templateForm, selected)
+  console.log(templateFormOpen, selected)
   return (
     <>
       <DisabledDays days={weekDayOfFirstDoM} />
@@ -64,7 +64,7 @@ const Days = ({ events, date }) => {
             .format('YYYY-MM')
             .concat(`-${day < 10 ? 0 : ''}${day}`);
 
-          templateForm
+          templateFormOpen
             ? selected.includes(newdate)
               ? setSelected(selected.filter(date => date !== newdate))
               : setSelected(selected.concat(newdate))

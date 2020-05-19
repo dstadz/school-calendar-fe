@@ -1,4 +1,7 @@
 import React, {useState, useEffect} from 'react';
+import {useRecoilState } from 'recoil'
+import { templateFormOpen, selectedarr } from '../utils/store'
+
 import {
   Flex,
   ButtonGroup,
@@ -19,15 +22,14 @@ const ChooseDateForm = ({
   endtime,
   summary,
   description,
-  selected,
-  setSelected,
-  templateFormOpen,
-  setTemplateFormOpen,
   setTemplateList,
   templateList
 }) => {
+  const [selected, setSelected] = useRecoilState(selectedarr)
+  const [templateFormOpen, setTemplateFormOpen] = useRecoilState(templateForm);
 
-  const { googleApi, api } = useAuth();
+
+  co //nst { googleApi, api } = useAuth();
   const deleteTemplate = async id => {
     try {
       const response = await axios.delete(
@@ -35,7 +37,7 @@ const ChooseDateForm = ({
       );
       return response.data;
     } catch (error) {
-      console.log(error); 
+      console.log(error);
     }
   };
   const handleDelete = async id => {

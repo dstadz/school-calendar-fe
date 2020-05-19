@@ -5,7 +5,7 @@ import DisabledDays from './DIsabledDays'
 
 
 
-const Days = ({ events, date, selected, setSelected, templateFormOpen }) => {
+const Days = ({ events, date }) => {
   const {
     daysInMonth,
     currentDay,
@@ -38,12 +38,12 @@ const Days = ({ events, date, selected, setSelected, templateFormOpen }) => {
 
         const handleSelected = () => {
           //dateTime: "2020-02-28T08:30:00-08:00"
-          
+
           //concatenated to w/ ternary to put into correct format
           const newdate = date
             .format('YYYY-MM')
             .concat(`-${day < 10 ? 0 : ''}${day}`);
-          
+
           templateFormOpen
             ? selected.includes(newdate)
               ? setSelected(selected.filter(date => date !== newdate))

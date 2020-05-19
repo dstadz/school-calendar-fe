@@ -7,7 +7,7 @@ import {
   IconButton
 } from '@chakra-ui/core';
 import { useRecoilState } from 'recoil'
-import { templateFormOpen } from '../utils/store'
+import { templateForm } from '../utils/store'
 const Template = ({
   id,
   starttime,
@@ -18,11 +18,12 @@ const Template = ({
   applyTemplate,
   handleDelete
 }) => {
-  const [templateForm, setTemplateForm] = useRecoilState(templateFormOpen);
-
+  const [templateFormOpen, setTemplateForm] = useRecoilState(templateForm);
+  console.log(templateFormOpen)
 
   const openTemplate = () => {
-    setTemplateForm(!templateForm);
+    console.log('clicked open template', templateFormOpen)
+    setTemplateForm(!templateFormOpen);
   };
 
   return (

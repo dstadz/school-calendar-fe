@@ -20,14 +20,5 @@ export const UseAddToSelected = () => {
     //   ? setSelected(selected.filter(date => date !== newdate))
     //   : setSelected(selected.concat(newdate))
     // : alert('pick a template');
-
-
-
-    // if (index !== -1) {
-    //   clone[index].qty += 1;
-    //   setItems(clone);
-    // } else {
-    //   setItems([...clone, { ...product, qty: 1 }]);
-    // }
   };
 };

@@ -1,9 +1,12 @@
 import React from 'react'
-import { atom, useRecoilState } from 'recoil'
+import {
+  atom,
+  useRecoilState
+} from 'recoil'
 
 
-export const templateFormOpen = atom({
-  key: 'templateFormOpen',
+export const templateForm = atom({
+  key: 'templateForm',
   default: false
 })
 
