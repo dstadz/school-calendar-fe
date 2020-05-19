@@ -7,7 +7,7 @@ import {
   IconButton
 } from '@chakra-ui/core';
 import { useRecoilState } from 'recoil'
-import { templateFormOpen } from '../utils/atoms'
+import { templateFormOpen } from '../utils/store'
 const Template = ({
   id,
   starttime,

@@ -24,7 +24,6 @@ const Dashboard = ({ setUserState }) => {
   const [templateList, setTemplateList] = useState([]);
   const [templateFormOpen, setTemplateFormOpen] = useState(false);
   const [formOpen, setFormOpen] = useState(false);
-  const [selected, setSelected] = useState([]);
   const [shadow, setShadow] = useState("");
   const { currentUser, handleSignOut } = googleApi;
   console.log(templateList)

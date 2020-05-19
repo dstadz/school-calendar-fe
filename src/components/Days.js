@@ -4,8 +4,8 @@ import Cell from './Cell';
 import EventsIndicator from './EventsIndicator';
 import useDate from '../hooks/useDate';
 
-import { useRecoilValue } from "recoil";
-import { templateFormOpen } from '../utils/atoms'
+import { useRecoilValue, useRecoilState } from "recoil";
+import { templateFormOpen, selectedarr } from '../utils/store'
 
 
 export const DisabledDays = ({ days }) => {
@@ -25,7 +25,7 @@ export const DisabledDays = ({ days }) => {
   );
 };
 
-const Days = ({ events, date, selected, setSelected }) => {
+const Days = ({ events, date }) => {
   const {
     daysInMonth,
     currentDay,
@@ -36,6 +36,8 @@ const Days = ({ events, date, selected, setSelected }) => {
   } = useDate(date);
 
   const templateForm = useRecoilValue(templateFormOpen)
+  const [selected, setSelected] = useRecoilState(selectedarr)
+  console.log(templateForm, selected)
   return (
     <>
       <DisabledDays days={weekDayOfFirstDoM} />
@@ -49,10 +51,10 @@ const Days = ({ events, date, selected, setSelected }) => {
           currentMonth === currentDay.month() &&
           currentYear === currentDay.year();
 
-        const isPicked = selected.includes(
-          `${currentYear}-${currentMonth + 1 < 10 ? 0 : ''}${currentMonth +
-            1}-${day < 10 ? 0 : ''}${day}`
-        );
+        // const isPicked = selected.includes(
+        //   `${currentYear}-${currentMonth + 1 < 10 ? 0 : ''}${currentMonth +
+        //     1}-${day < 10 ? 0 : ''}${day}`
+        // );
 
         const handleSelected = () => {
           //dateTime: "2020-02-28T08:30:00-08:00"
@@ -83,8 +85,8 @@ const Days = ({ events, date, selected, setSelected }) => {
               justify="space-between"
               h="100%"
               py={[1, 8]}
-              backgroundColor={isPicked ? 'brand.blue_primary' : 'inherit'}
-              color={isPicked ? 'white' : 'inherit'}
+              // backgroundColor={isPicked ? 'brand.blue_primary' : 'inherit'}
+              // color={isPicked ? 'white' : 'inherit'}
               onClick={handleSelected}
             >
               <Box
