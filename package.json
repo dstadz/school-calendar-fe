@@ -52,6 +52,7 @@
   "react-hook-form": "^4.10.1",
   "react-router-dom": "^5.1.2",
   "react-scripts": "3.4.0",
+  "recoil": "^0.0.7",
   "styled-components": "^5.0.1"
  },
  "devDependencies": {
