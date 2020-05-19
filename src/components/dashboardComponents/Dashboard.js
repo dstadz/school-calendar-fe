@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Flex, Box, Grid } from '@chakra-ui/core';
 import axios from 'axios';
+import { useRecoilValue } from 'recoil'
+import { templateForm } from '../../utils/store'
 import { useAuth } from '../../contexts/auth';
 import Calendar from './calendarComponents/Calendar.js';
 import ProfileInfo from './ProfileInfo'
@@ -20,11 +22,9 @@ const getTemplateList = async ({ googleId }) => {
 
 const Dashboard = ({ setUserState }) => {
   const { googleApi, api } = useAuth();
-
+  const templateFormOpen = useRecoilValue(templateForm)
   const [templateList, setTemplateList] = useState([]);
-  const [templateFormOpen, setTemplateFormOpen] = useState(false);
   const [formOpen, setFormOpen] = useState(false);
-  const [selected, setSelected] = useState([]);
   const [shadow, setShadow] = useState("");
   const { currentUser, handleSignOut } = googleApi;
   console.log(templateList)
@@ -89,9 +89,6 @@ const Dashboard = ({ setUserState }) => {
           <TemplateContainer
             setSelected={setSelected}
             selected={selected}
-            templateFormOpen={templateFormOpen}
-            setTemplateFormOpen={setTemplateFormOpen}
-
             formOpen={formOpen}
             setFormOpen={setFormOpen}
             setTemplateList={setTemplateList}
@@ -104,8 +101,6 @@ const Dashboard = ({ setUserState }) => {
             api={api}
             selected={selected}
             setSelected={setSelected}
-            templateFormOpen={templateFormOpen}
-            setTemplateFormOpen={setTemplateFormOpen}
             events={events}
           />
         </Box>

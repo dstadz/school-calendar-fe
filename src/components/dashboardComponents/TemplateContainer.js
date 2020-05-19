@@ -14,8 +14,6 @@ const TemplateContainer = (props) => {
     const {
     setSelected,
     selected,
-    templateFormOpen,
-    setTemplateFormOpen,
     formOpen,
     setFormOpen,
     setTemplateList,
@@ -48,12 +46,9 @@ const TemplateContainer = (props) => {
                   description={t.description}
                   setSelected={setSelected}
                   selected={selected}
-                  templateFormOpen={templateFormOpen}
-                  setTemplateFormOpen={setTemplateFormOpen}
                   setTemplateList={setTemplateList}
                   templateList={templateList}
                 />
-                
               ))}
             <Button
               my={4}
